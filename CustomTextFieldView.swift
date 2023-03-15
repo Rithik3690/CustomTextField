@@ -11,8 +11,8 @@ class CustomTextFieldView: UIView {
     let textField = UITextField()
     
     let height: CGFloat = 60
-    var tintColorActive: UIColor = App.Theme.current.package.accentColor
-    var primaryBorderColour: UIColor = App.Theme.current.package.primaryTextColor.withAlphaComponent(0.8)
+    var tintColorActive: UIColor = .darkGray
+    var primaryBorderColour: UIColor = .lightGray
     var title: String = "" {
         didSet{
             label.text = title
@@ -23,7 +23,7 @@ class CustomTextFieldView: UIView {
             textField.isSecureTextEntry = isSecureTextEntry
         }
     }
-    var primaryBackgroundColor: UIColor = App.Theme.current.package.backgroundColor
+    var primaryBackgroundColor: UIColor = .clear
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,7 +40,7 @@ class CustomTextFieldView: UIView {
         return CGSize(width: UIView.noIntrinsicMetric, height: height)
     }
     
-    func configureTextField(_ title: String, inputText: String = "", tintColorActive: UIColor = App.Theme.current.package.accentColor, primaryBorderColour: UIColor = App.Theme.current.package.primaryTextColor.withAlphaComponent(0.8), primaryBackgroundColor: UIColor = App.Theme.current.package.backgroundColor, isSecureTextEntry: Bool = false) {
+    func configureTextField(_ title: String, inputText: String = "", tintColorActive: UIColor = .darkGray, primaryBorderColour: UIColor = .lightGray, primaryBackgroundColor: UIColor = .clear, isSecureTextEntry: Bool = false) {
         self.title = title
         self.accessibilityLabel = title
         self.label.accessibilityLabel = title
